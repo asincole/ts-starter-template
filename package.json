@@ -1,11 +1,10 @@
 {
   "name": "ts-starter-template",
   "version": "0.0.1",
-  "description": "A barebone typescript starter template with test (jest) conofigured",
-  "main": "index.js",
+  "description": "A barebone typescript starter template with test (jest) configured",
   "scripts": {
-    "start": "npm run build && node dist/**/*.js",
-    "build": "tsc",
+    "start": "webpack serve --open --config config/webpack.dev.js",
+    "build": "webpack --config config/webpack.prod.js",
     "format": "prettier --write './src/**/*.{ts,tsx}'",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
     "lint:fix": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
@@ -27,10 +26,16 @@
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
+    "html-webpack-plugin": "^5.5.0",
     "jest": "^27.5.1",
     "prettier": "^2.6.2",
     "ts-jest": "^27.1.4",
-    "typescript": "^4.6.3"
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.6.3",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0",
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "resolve": "^1.22.0"
